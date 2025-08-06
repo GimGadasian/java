@@ -11,7 +11,9 @@ public class StuMain {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Student> list = new ArrayList<Student>();
 		
-		int stuNo, kor, eng, math, total, rank = 0;
+		int stuNo = 0;
+		int kor, eng, math, total, rank = 0;
+		int temp;
 		double avr = 0;
 		String name = "";
 
@@ -27,14 +29,22 @@ public class StuMain {
 				case 2: 
 					sd.scoreBoard(list);
 					break;
+				case 3:
+					sd.update(list);
+				    break;
 				case 4: 
-					sd.save(list);
+					sd.delete(list);
 					break;
 				case 5: 
-					// delete
+					sd.save(list);
 					break;
 				case 6: 
-					// sort
+					// sort by total
+					sd.sort(list);
+					break;
+				case 7: 
+					// rank
+					sd.rank(list);
 					break;
 					
 				default: break loop;

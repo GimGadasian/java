@@ -97,7 +97,7 @@ public class Student {
 		return rank;
 	}
 
-	public void setRank(int total) {
+	public void setRank(int rank) {
 		this.rank = rank;
 	}
 	
