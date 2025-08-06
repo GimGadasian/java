@@ -1,7 +1,8 @@
 
 public class Student {
 
-	public static int count = 0;
+	public static int count = 0; //static -> 클래스 로딩 시 한 번만 초기화됨. 모든 Student 객체가 공유함
+
 	private int stuNo;
 	private String name;
 	private int kor;
@@ -11,12 +12,15 @@ public class Student {
 	private double avr;
 	private int rank;
 	
-	{stuNo = ++count;}
-	Student() {
+	{stuNo = ++count;} // 인스턴스 초기화 블록: 객체 생성 시마다 count 증가 → stuNo 자동 부여
+
+	
+	Student() {// 기본 생성자
 		
 	}
 	
-	Student(String name, int kor, int eng, int math) {
+	Student(String name, int kor, int eng, int math) {// 점수와 이름을 받아 총점과 평균 계산하는 생성자
+
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
@@ -25,8 +29,8 @@ public class Student {
 		avr = total/3.0;
 	}
 	
-	Student(int stuNo, String name, int kor, int eng, int math, int total, double avr, int rank) {
-		//count --;
+	Student(int stuNo, String name, int kor, int eng, int math, int total, double avr, int rank) {// 파일에서 불러온 데이터를 기반으로 객체를 생성하는 생성자
+
 		this.stuNo = stuNo;
 		this.name = name;
 		this.kor = kor;
@@ -37,7 +41,9 @@ public class Student {
 		this.rank = rank;
 	}
 
-	public int getStuNo() {
+	// getter, setter
+	
+	public int getStuNo() {    
 		return stuNo;
 	}
 
